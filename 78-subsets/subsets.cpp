@@ -2,7 +2,7 @@ class Solution {
 public:
    
 
-   void subset(vector<int>& nums,int index,int n,vector<vector<int>>&ans,vector<int>temp){
+   void subset(vector<int>& nums,int index,int n,vector<vector<int>>&ans,vector<int>&temp){
 
 
     if(index == n){
@@ -16,6 +16,7 @@ public:
 
      temp.push_back(nums[index]);
      subset(nums,index+1,n,ans ,temp);
+     temp.pop_back();
 
    }
 
