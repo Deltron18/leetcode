@@ -31,17 +31,17 @@ public:
 
 
         // by actually  reversing the nodes
-        ListNode *cur= head, *prev=NULL, *fut=NULL;
 
-        while(cur){
-            fut=cur->next;
-            cur->next = prev;
+        ListNode*prev = NULL , *cur=head , *next=NULL;
+
+        while(cur!=NULL){
+            next=cur->next;
+            cur->next=prev;
             prev=cur;
-            cur=fut;
+            cur=next;
         }
-        head=prev;
-
-        return head;
+        return prev;
+   
 
 
 
