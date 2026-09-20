@@ -1,21 +1,19 @@
 class Solution {
 public:
+
+int fibn(int n, vector<int>&dp){
+
+    if(n<=1)
+    return n;
+    
+    if(dp[n]!=-1)
+    return dp[n];
+
+    return dp[n]=fibn(n-1,dp)+fibn(n-2,dp);
+}
+
     int fib(int n) {
-        // if (n == 0) return 0;
-        // if (n == 1) return 1;
-
-        // int arr[100000];
-        // arr[0] = 0;
-        // arr[1] = 1;
-
-        // for (int i = 2; i <= n; i++) {
-        //     arr[i] = arr[i - 1] + arr[i - 2];
-        // }
-
-        // return arr[n];
-        if(n<=1)
-        return n;
-
-         return fib(n-1)+fib(n-2);
-    }  
+         vector<int>dp(n+1,-1); 
+         return fibn(n,dp);
+    }
 };
